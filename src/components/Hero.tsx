@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export function Hero() {
     return (
-        <section className="relative min-h-screen flex items-start overflow-hidden bg-background pt-[160px] pb-20">
+        <section className="relative min-h-screen flex items-start overflow-hidden bg-background pt-32 pb-20">
             {/* Dynamic Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
