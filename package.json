@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "git add . && git commit -m \"Update via npm run deploy\" && git push origin main"
   },
   "dependencies": {
     "clsx": "^2.1.1",
