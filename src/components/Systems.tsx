@@ -36,8 +36,36 @@ const systems = [
 
 export function Systems() {
     return (
-        <section className="py-32 bg-background relative border-t border-white/5" id="systems">
-            <div className="container mx-auto px-6">
+        <section className="py-32 bg-background relative border-t border-white/5 overflow-hidden" id="systems">
+            {/* Floating Background Dots */}
+            <div className="absolute inset-0 pointer-events-none">
+                {[...Array(8)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        className="absolute rounded-full bg-primary/20 blur-lg"
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            y: [0, -20, 0],
+                            opacity: [0.1, 0.3, 0.1],
+                            scale: [1, 1.2, 1],
+                        }}
+                        transition={{
+                            duration: 4 + Math.random() * 4,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: Math.random() * 2,
+                        }}
+                        style={{
+                            width: Math.random() * 40 + 20 + 'px',
+                            height: Math.random() * 40 + 20 + 'px',
+                            left: Math.floor(Math.random() * 90) + '%',
+                            top: Math.floor(Math.random() * 90) + '%',
+                        }}
+                    />
+                ))}
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
