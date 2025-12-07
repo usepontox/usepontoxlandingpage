@@ -1,7 +1,15 @@
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <!-- Maximum size blinking dot -->
-  <circle cx="16" cy="16" r="15" fill="#D4F00C">
-    <!-- Aggressive Blink: Fades almost completely out and back in -->
-    <animate attributeName="opacity" values="1;0.1;1" dur="0.8s" repeatCount="indefinite" />
-  </circle>
+  <style>
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.2; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .dot {
+      transform-origin: center;
+      animation: pulse 1s ease-in-out infinite;
+      fill: #D4F00C;
+    }
+  </style>
+  <circle cx="16" cy="16" r="14" class="dot" />
 </svg>
