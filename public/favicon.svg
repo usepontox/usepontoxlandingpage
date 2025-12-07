@@ -1,10 +1,13 @@
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <!-- Core Dot -->
-  <circle cx="16" cy="16" r="6" fill="#D4F00C" />
+  <!-- Core Dot (Almost full size) -->
+  <circle cx="16" cy="16" r="12" fill="#D4F00C">
+    <!-- Subtle pulse on the core itself -->
+    <animate attributeName="opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite" />
+  </circle>
   
-  <!-- Ping Animation Ring -->
-  <circle cx="16" cy="16" r="6" fill="#D4F00C">
-    <animate attributeName="r" from="6" to="14" dur="1.5s" begin="0s" repeatCount="indefinite" />
-    <animate attributeName="opacity" from="0.8" to="0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+  <!-- Ping Animation Ring (Expands to edges) -->
+  <circle cx="16" cy="16" r="12" fill="#D4F00C">
+    <animate attributeName="r" from="12" to="16" dur="1.5s" begin="0s" repeatCount="indefinite" />
+    <animate attributeName="opacity" from="0.6" to="0" dur="1.5s" begin="0s" repeatCount="indefinite" />
   </circle>
 </svg>
