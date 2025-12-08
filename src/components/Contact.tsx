@@ -1,4 +1,3 @@
-```javascript
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Mail, CheckCircle2, Loader2, Phone, AlertCircle } from 'lucide-react';
@@ -13,7 +12,7 @@ export function Contact() {
         e.preventDefault();
         setFormState('submitting');
         setErrorMessage('');
-        
+
         try {
             // Debug check for credentials
             const envCheck = await supabase.from('leads').select('count', { count: 'exact', head: true });
@@ -25,10 +24,10 @@ export function Contact() {
             const { error } = await supabase
                 .from('leads')
                 .insert([
-                    { 
-                        name: formData.name, 
-                        email: formData.email, 
-                        phone: formData.phone 
+                    {
+                        name: formData.name,
+                        email: formData.email,
+                        phone: formData.phone
                     }
                 ]);
 
@@ -46,7 +45,7 @@ export function Contact() {
         <section className="py-24 bg-transparent relative overflow-hidden" id="contact">
             <div className="container mx-auto px-6 max-w-6xl relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    
+
                     {/* Left Side: Call to Action */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -61,9 +60,9 @@ export function Contact() {
                             Agende uma consultoria estratégica e descubra onde sua operação pode ganhar eficiência com nossas automações.
                         </p>
 
-                        <a 
-                            href="https://wa.me/5541984781575" 
-                            target="_blank" 
+                        <a
+                            href="https://wa.me/5541984781575"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-4 bg-[#25D366] text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#1fa851] transition-all hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.3)] group"
                         >
@@ -82,7 +81,7 @@ export function Contact() {
                     >
                         <AnimatePresence mode="wait">
                             {formState === 'success' ? (
-                                <motion.div 
+                                <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     className="text-center py-12"
@@ -92,7 +91,7 @@ export function Contact() {
                                     </div>
                                     <h3 className="text-2xl font-bold text-white mb-2">Dados Recebidos!</h3>
                                     <p className="text-gray-400">Salvamos seu contato. Em breve falaremos com você.</p>
-                                    <button 
+                                    <button
                                         onClick={() => setFormState('idle')}
                                         className="mt-8 text-primary hover:text-white transition-colors text-sm font-medium"
                                     >
@@ -100,11 +99,11 @@ export function Contact() {
                                     </button>
                                 </motion.div>
                             ) : (
-                                <motion.form 
+                                <motion.form
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
-                                    onSubmit={handleSubmit} 
+                                    onSubmit={handleSubmit}
                                     className="space-y-6"
                                 >
                                     <div className="space-y-2">
@@ -114,32 +113,32 @@ export function Contact() {
 
                                     <div className="space-y-4">
                                         <div>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 placeholder="Nome Completo"
                                                 required
                                                 value={formData.name}
-                                                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                                 className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                                             />
                                         </div>
                                         <div>
-                                            <input 
-                                                type="email" 
+                                            <input
+                                                type="email"
                                                 placeholder="Seu melhor e-mail"
                                                 required
                                                 value={formData.email}
-                                                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                                 className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                                             />
                                         </div>
                                         <div>
-                                            <input 
-                                                type="tel" 
+                                            <input
+                                                type="tel"
                                                 placeholder="Telefone / WhatsApp"
                                                 required
                                                 value={formData.phone}
-                                                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                                 className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                                             />
                                         </div>
@@ -157,8 +156,8 @@ export function Contact() {
                                         </div>
                                     )}
 
-                                    <button 
-                                        type="submit" 
+                                    <button
+                                        type="submit"
                                         disabled={formState === 'submitting'}
                                         className="w-full bg-primary text-black font-bold py-4 rounded-lg hover:bg-[#c2dc0b] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
@@ -183,4 +182,3 @@ export function Contact() {
         </section>
     );
 }
-```
