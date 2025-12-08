@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, Box, Users, ShieldCheck, Zap, Wallet, Bot } from 'lucide-react';
+import { BarChart3, Box, Users, ShieldCheck, Wallet, Bot } from 'lucide-react';
 
 const systems = [
     {
