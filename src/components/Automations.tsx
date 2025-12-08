@@ -43,50 +43,40 @@ export function Automations() {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        {/* Minimalist Flowchart */}
-                        <div className="relative z-10 p-10 border border-white/5 rounded-2xl bg-surface/50 backdrop-blur-sm">
-                            <div className="absolute top-0 right-0 p-4 opacity-20">
-                                <Zap className="w-24 h-24 text-primary" />
-                            </div>
+                        {/* AI Visual Representation */}
+                        <div className="relative z-10 rounded-2xl overflow-hidden border border-white/10 group">
+                            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
 
-                            <div className="space-y-8">
-                                {/* Step 1 */}
-                                <div className="flex items-center gap-6">
-                                    <div className="w-12 h-12 rounded-full bg-[#2A2A2A] flex items-center justify-center border border-white/10 relative z-10">
-                                        <MessageSquare className="w-5 h-5 text-gray-300" />
-                                    </div>
-                                    <div className="flex-1 p-4 bg-[#1A1A1A] rounded-lg border border-white/5">
-                                        <div className="text-xs text-primary mb-1">Input</div>
-                                        <div className="text-sm font-medium">Demanda Operacional</div>
-                                    </div>
+                            {/* Main Image */}
+                            <img
+                                src="/images/ai-robot.png"
+                                alt="AI Automation Agent"
+                                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            />
+
+                            {/* Animated Scanning Overlay */}
+                            <motion.div
+                                className="absolute inset-0 bg-primary/10 z-20"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: [0, 0.1, 0] }}
+                                transition={{ duration: 3, repeat: Infinity }}
+                            />
+
+                            <motion.div
+                                className="absolute top-0 left-0 right-0 h-1 bg-primary/50 shadow-[0_0_20px_#D4F00C] z-20"
+                                animate={{ top: ["0%", "100%", "0%"] }}
+                                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                            />
+
+                            {/* Floating Data Points Effect */}
+                            <div className="absolute bottom-8 left-8 z-30 space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                                    <span className="text-xs font-mono text-primary/80">SYSTEM_ACTIVE</span>
                                 </div>
-
-                                {/* Connector Line */}
-                                <div className="absolute left-[74px] top-[88px] w-0.5 h-12 bg-white/10" />
-
-                                {/* Step 2 */}
-                                <div className="flex items-center gap-6">
-                                    <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-[0_0_20px_rgba(212,240,12,0.3)] relative z-10">
-                                        <Bot className="w-6 h-6 text-background" />
-                                    </div>
-                                    <div className="flex-1 p-4 bg-[#1A1A1A] rounded-lg border border-primary/30">
-                                        <div className="text-xs text-primary mb-1">Processing</div>
-                                        <div className="text-sm font-medium text-white">IA Qualifica e Responde</div>
-                                    </div>
-                                </div>
-
-                                {/* Connector Line */}
-                                <div className="absolute left-[74px] top-[184px] w-0.5 h-12 bg-white/10" />
-
-                                {/* Step 3 */}
-                                <div className="flex items-center gap-6">
-                                    <div className="w-12 h-12 rounded-full bg-[#2A2A2A] flex items-center justify-center border border-white/10 relative z-10">
-                                        <Database className="w-5 h-5 text-gray-300" />
-                                    </div>
-                                    <div className="flex-1 p-4 bg-[#1A1A1A] rounded-lg border border-white/5">
-                                        <div className="text-xs text-green-500 mb-1">Action</div>
-                                        <div className="text-sm font-medium">Salva no CRM</div>
-                                    </div>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse delay-75" />
+                                    <span className="text-xs font-mono text-primary/80">PROCESSING_DATA...</span>
                                 </div>
                             </div>
                         </div>
