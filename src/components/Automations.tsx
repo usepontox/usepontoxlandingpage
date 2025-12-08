@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Bot, Database, MessageSquare, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
 
 export function Automations() {
     return (
