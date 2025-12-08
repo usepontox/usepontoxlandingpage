@@ -1,5 +1,30 @@
-whileInView = {{ opacity: 1, x: 0 }}
-viewport = {{ once: true }}
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Mail, CheckCircle2, Loader2, Phone } from 'lucide-react';
+
+export function Contact() {
+    const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setFormState('submitting');
+
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        setFormState('success');
+    };
+
+    return (
+        <section className="py-24 bg-transparent relative overflow-hidden" id="contact">
+            <div className="container mx-auto px-6 max-w-6xl relative z-10">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                    {/* Left Side: Call to Action */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
                     >
                         <h2 className="text-5xl md:text-6xl font-display font-bold mb-8 leading-tight">
                             Pronto para <br />
@@ -19,97 +44,97 @@ viewport = {{ once: true }}
                             Falar no WhatsApp
                             <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                         </a>
-                    </motion.div >
+                    </motion.div>
 
-    {/* Right Side: Contact Form */ }
-    < motion.div
-initial = {{ opacity: 0, x: 50 }}
-whileInView = {{ opacity: 1, x: 0 }}
-viewport = {{ once: true }}
-className = "bg-surface/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative"
-    >
-    <AnimatePresence mode="wait">
-        {formState === 'success' ? (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-12"
-            >
-                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                    <CheckCircle2 className="w-10 h-10" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Mensagem Enviada!</h3>
-                <p className="text-gray-400">Entraremos em contato em breve.</p>
-                <button
-                    onClick={() => setFormState('idle')}
-                    className="mt-8 text-primary hover:text-white transition-colors text-sm font-medium"
-                >
-                    Enviar outra mensagem
-                </button>
-            </motion.div>
-        ) : (
-            <motion.form
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onSubmit={handleSubmit}
-                className="space-y-6"
-            >
-                <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-white">Contato por E-mail</h3>
-                    <p className="text-sm text-gray-400">Preencha seus dados para receber nosso contato.</p>
-                </div>
+                    {/* Right Side: Contact Form */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-surface/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative"
+                    >
+                        <AnimatePresence mode="wait">
+                            {formState === 'success' ? (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="text-center py-12"
+                                >
+                                    <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                                        <CheckCircle2 className="w-10 h-10" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white mb-2">Mensagem Enviada!</h3>
+                                    <p className="text-gray-400">Entraremos em contato em breve.</p>
+                                    <button
+                                        onClick={() => setFormState('idle')}
+                                        className="mt-8 text-primary hover:text-white transition-colors text-sm font-medium"
+                                    >
+                                        Enviar outra mensagem
+                                    </button>
+                                </motion.div>
+                            ) : (
+                                <motion.form
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    onSubmit={handleSubmit}
+                                    className="space-y-6"
+                                >
+                                    <div className="space-y-2">
+                                        <h3 className="text-2xl font-bold text-white">Contato por E-mail</h3>
+                                        <p className="text-sm text-gray-400">Preencha seus dados para receber nosso contato.</p>
+                                    </div>
 
-                <div className="space-y-4">
-                    <div>
-                        <input
-                            type="text"
-                            placeholder="Nome Completo"
-                            required
-                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                        />
-                    </div>
-                    <div>
-                        <input
-                            type="email"
-                            placeholder="Seu melhor e-mail"
-                            required
-                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                        />
-                    </div>
-                    <div>
-                        <input
-                            type="tel"
-                            placeholder="Telefone / WhatsApp"
-                            required
-                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                        />
-                    </div>
-                </div>
+                                    <div className="space-y-4">
+                                        <div>
+                                            <input
+                                                type="text"
+                                                placeholder="Nome Completo"
+                                                required
+                                                className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                                            />
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="email"
+                                                placeholder="Seu melhor e-mail"
+                                                required
+                                                className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                                            />
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="tel"
+                                                placeholder="Telefone / WhatsApp"
+                                                required
+                                                className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                                            />
+                                        </div>
+                                    </div>
 
-                <button
-                    type="submit"
-                    disabled={formState === 'submitting'}
-                    className="w-full bg-primary text-black font-bold py-4 rounded-lg hover:bg-[#c2dc0b] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                    {formState === 'submitting' ? (
-                        <>
-                            <Loader2 className="w-5 h-5 animate-spin" />
-                            Enviando...
-                        </>
-                    ) : (
-                        <>
-                            <Mail className="w-5 h-5" />
-                            Receber Contato
-                        </>
-                    )}
-                </button>
-            </motion.form>
-        )}
-    </AnimatePresence>
-                    </motion.div >
-                </div >
-            </div >
-        </section >
+                                    <button
+                                        type="submit"
+                                        disabled={formState === 'submitting'}
+                                        className="w-full bg-primary text-black font-bold py-4 rounded-lg hover:bg-[#c2dc0b] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                    >
+                                        {formState === 'submitting' ? (
+                                            <>
+                                                <Loader2 className="w-5 h-5 animate-spin" />
+                                                Enviando...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Mail className="w-5 h-5" />
+                                                Receber Contato
+                                            </>
+                                        )}
+                                    </button>
+                                </motion.form>
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
     );
 }
