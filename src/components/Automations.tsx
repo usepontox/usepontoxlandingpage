@@ -22,8 +22,8 @@ export function Automations() {
 
                         <div className="space-y-6">
                             {[
-                                { title: "Integração API", desc: "Conexão fluida entre ERPs, CRMs e Gateways." },
-                                { title: "Bots de Atendimento", desc: "Respostas imediatas no WhatsApp e Chatbots." },
+                                { title: "Integração Total", desc: "Conexão fluida entre ERPs, CRMs e Ferramentas." },
+                                { title: "Agentes de IA", desc: "Automação de processos complexos e atendimento." },
                                 { title: "Processamento de Dados", desc: "ETL automático para relatórios gerenciais." }
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4 group cursor-default">
@@ -56,8 +56,8 @@ export function Automations() {
                                         <MessageSquare className="w-5 h-5 text-gray-300" />
                                     </div>
                                     <div className="flex-1 p-4 bg-[#1A1A1A] rounded-lg border border-white/5">
-                                        <div className="text-xs text-primary mb-1">Trigger</div>
-                                        <div className="text-sm font-medium">Novo Lead (WhatsApp)</div>
+                                        <div className="text-xs text-primary mb-1">Input</div>
+                                        <div className="text-sm font-medium">Demanda Operacional</div>
                                     </div>
                                 </div>
 

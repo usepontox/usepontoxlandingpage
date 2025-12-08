@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, Box, Users, ShieldCheck, Zap, Wallet } from 'lucide-react';
+import { BarChart3, Box, Users, ShieldCheck, Zap, Wallet, Bot } from 'lucide-react';
 
 const systems = [
     {
@@ -29,9 +29,9 @@ const systems = [
         description: "Protocolos de segurança bancária e criptografia ponta a ponta."
     },
     {
-        icon: <Zap className="w-6 h-6" />,
-        title: "High Performance",
-        description: "Arquitetura otimizada para máxima velocidade e estabilidade."
+        icon: <Bot className="w-6 h-6" />,
+        title: "Automação & IA",
+        description: "Soluções inteligentes desenhadas para a realidade da sua operação."
     }
 ];
 
