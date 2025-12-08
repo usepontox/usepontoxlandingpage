@@ -5,6 +5,7 @@ import { supabase } from '../lib/supabase';
 
 export function Contact() {
     const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
 
     const handleSubmit = async (e: React.FormEvent) => {
