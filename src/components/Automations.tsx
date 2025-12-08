@@ -44,40 +44,50 @@ export function Automations() {
                         className="relative"
                     >
                         {/* AI Visual Representation */}
-                        <div className="relative z-10 rounded-2xl overflow-hidden border border-white/10 group">
-                            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
+                        <div className="relative z-10 w-full max-w-md mx-auto aspect-square flex items-center justify-center">
+                            {/* Tech Background Grid - making it feel connected */}
+                            <div className="absolute inset-0 bg-[linear-gradient(rgba(20,20,20,0)_1px,transparent_1px),linear-gradient(90deg,rgba(20,20,20,0)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent)] opacity-50" />
 
-                            {/* Main Image */}
+                            {/* Main Image with blending */}
+                            <div className="absolute inset-0 rounded-full bg-primary/5 blur-3xl opacity-20 animate-pulse pointer-events-none" />
+
                             <img
                                 src="/images/ai-robot.png"
                                 alt="AI Automation Agent"
-                                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                className="relative z-10 w-full h-full object-contain [mask-image:radial-gradient(circle_at_center,black_40%,transparent_80%)] contrast-125 brightness-110 drop-shadow-[0_0_30px_rgba(212,240,12,0.15)]"
+                                style={{ mixBlendMode: 'lighten' }}
                             />
 
-                            {/* Animated Scanning Overlay */}
-                            <motion.div
-                                className="absolute inset-0 bg-primary/10 z-20"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: [0, 0.1, 0] }}
-                                transition={{ duration: 3, repeat: Infinity }}
-                            />
-
-                            <motion.div
-                                className="absolute top-0 left-0 right-0 h-1 bg-primary/50 shadow-[0_0_20px_#D4F00C] z-20"
-                                animate={{ top: ["0%", "100%", "0%"] }}
-                                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                            />
+                            {/* Animated Holographic Scanlines */}
+                            <div className="absolute inset-0 z-20 overflow-hidden pointer-events-none [mask-image:radial-gradient(circle_at_center,black_40%,transparent_80%)]">
+                                <motion.div
+                                    className="w-full h-[2px] bg-primary/50 shadow-[0_0_20px_#D4F00C]"
+                                    animate={{ top: ["0%", "100%", "0%"] }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                                />
+                                <div className="absolute inset-0 bg-[linear-gradient(transparent_2px,#D4F00C_2px)] bg-[size:100%_4px] opacity-[0.03]" />
+                            </div>
 
                             {/* Floating Data Points Effect */}
-                            <div className="absolute bottom-8 left-8 z-30 space-y-2">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                                    <span className="text-xs font-mono text-primary/80">SYSTEM_ACTIVE</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse delay-75" />
-                                    <span className="text-xs font-mono text-primary/80">PROCESSING_DATA...</span>
-                                </div>
+                            <div className="absolute bottom-20 left-0 right-0 flex justify-center gap-8 z-30">
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 1 }}
+                                    className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20"
+                                >
+                                    <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                                    <span className="text-[10px] font-mono text-primary/80 tracking-widest">NEURAL_NET</span>
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 1.5 }}
+                                    className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20"
+                                >
+                                    <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse delay-75" />
+                                    <span className="text-[10px] font-mono text-primary/80 tracking-widest">ACTIVE</span>
+                                </motion.div>
                             </div>
                         </div>
                     </motion.div>
