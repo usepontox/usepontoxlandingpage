@@ -21,12 +21,6 @@ export function Header() {
                 </a>
 
                 <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                    <a href="#" className="hover:text-primary transition-colors">Soluções</a>
-                    <a href="#" className="hover:text-primary transition-colors">Metodologia</a>
-                    <a href="#" className="hover:text-primary transition-colors">Cases</a>
-                    <button className="px-5 py-2.5 border border-white/10 rounded-full text-white hover:bg-white/5 transition-all">
-                        Área do Cliente
-                    </button>
                 </nav>
 
                 <button className="md:hidden p-2 text-white">

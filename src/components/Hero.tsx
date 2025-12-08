@@ -25,8 +25,8 @@ export function Hero() {
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight tracking-tight">
-                        Reinvente o seu <br />
-                        <span className="text-primary">Negócio Digital</span>
+                        Solução e automação <br />
+                        <span className="text-primary">transformando o seu negócio.</span>
                     </h1>
 
                     <p className="text-xl text-gray-400 max-w-xl mb-10 leading-relaxed font-light">
@@ -47,13 +47,15 @@ export function Hero() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center gap-6">
-                        <button className="w-full sm:w-auto px-8 py-4 bg-primary text-background font-bold rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group">
+                        <a
+                            href="https://wa.me/5541984781575"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto px-8 py-4 bg-primary text-background font-bold rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group"
+                        >
                             Falar com Especialista
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                        <button className="w-full sm:w-auto px-8 py-4 border border-white/10 rounded-lg hover:bg-white/5 transition-all text-white font-medium">
-                            Explorar Nossa Abordagem
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
 

@@ -3,12 +3,10 @@ import { Systems } from './components/Systems';
 import { Automations } from './components/Automations';
 import { Contact } from './components/Contact';
 import { Header } from './components/Header';
-import { ParticleBackground } from './components/ParticleBackground';
 
 function App() {
   return (
     <main className="min-h-screen bg-background text-white selection:bg-primary/30 relative">
-      <ParticleBackground />
       <Header />
       <Hero />
       <Systems />
