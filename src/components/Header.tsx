@@ -21,10 +21,7 @@ export function Header() {
                 </a>
 
                 <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                    <a href="#solucoes" className="hover:text-primary transition-colors">Soluções</a>
-                    <a href="#metodologia" className="hover:text-primary transition-colors">Metodologia</a>
                     <a href="#cases" className="hover:text-primary transition-colors">Cases</a>
-                    <a href="#area-cliente" className="hover:text-primary transition-colors">Área do Cliente</a>
                 </nav>
 
                 <button className="md:hidden p-2 text-white">
