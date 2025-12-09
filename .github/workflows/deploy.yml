@@ -36,6 +36,7 @@ jobs:
           local-dir: ./dist/
           server-dir: ./
           protocol: ftps
+          dangerous-force-overwrite: true
           exclude: |
             **/.git*
             **/.git*/**
