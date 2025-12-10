@@ -23,11 +23,11 @@ const platforms = [
 export function Integrations() {
     return (
         <section className="py-32 bg-[#0A0A0F] relative overflow-hidden">
-            {/* Background gradient effects - Azul mais brilhante */}
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-600/20 via-blue-500/15 to-transparent" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-blue-500/20 rounded-full blur-3xl" />
-            <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl" />
+            {/* Background gradient effects - Verde neon brilhante */}
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/15 to-transparent" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-primary/20 rounded-full blur-3xl" />
+            <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-green-400/10 rounded-full blur-3xl" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}
@@ -38,7 +38,7 @@ export function Integrations() {
                     className="text-center mb-20"
                 >
                     <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-                        <span className="text-blue-400">Conecte-se</span> às principais plataformas do mercado.
+                        <span className="text-primary">Conecte-se</span> às principais plataformas do mercado.
                     </h2>
                     <p className="text-gray-400 text-lg max-w-3xl mx-auto">
                         Conectamos com as ferramentas mais utilizadas para escalar seu negócio: chats em tempo real, análise de dados, trackeamento, automações, área de membros externa e muito mais.
@@ -261,7 +261,7 @@ export function Integrations() {
                     className="text-center mt-20"
                 >
                     <p className="text-xl md:text-2xl font-medium">
-                        <span className="text-blue-400">A tecnologia trabalha junto,</span>{' '}
+                        <span className="text-primary">A tecnologia trabalha junto,</span>{' '}
                         <span className="text-gray-400">não contra você.</span>
                     </p>
                 </motion.div>
