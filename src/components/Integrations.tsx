@@ -1,23 +1,31 @@
 import { motion } from 'framer-motion';
-import { FaFacebook, FaWhatsapp, FaDiscord, FaInstagram } from 'react-icons/fa';
-import { SiSupabase, SiN8N, SiMercadopago } from 'react-icons/si';
+import { FaFacebook, FaWhatsapp, FaDiscord, FaInstagram, FaSlack, FaStripe } from 'react-icons/fa';
+import { SiSupabase, SiN8N, SiMercadopago, SiNotion, SiZapier, SiOpenai, SiGooglegemini } from 'react-icons/si';
 
 const platforms = [
     { icon: FaWhatsapp, name: 'WhatsApp', color: '#25D366' },
+    { icon: SiOpenai, name: 'ChatGPT', color: '#10A37F' },
     { icon: FaFacebook, name: 'Facebook', color: '#1877F2' },
+    { icon: SiGooglegemini, name: 'Gemini', color: '#8E75FF' },
     { icon: FaDiscord, name: 'Discord', color: '#5865F2' },
+    { icon: SiNotion, name: 'Notion', color: '#FFFFFF' },
     { icon: FaInstagram, name: 'Instagram', color: '#E4405F' },
+    { icon: SiZapier, name: 'Zapier', color: '#FF4A00' },
     { icon: SiMercadopago, name: 'Mercado Pago', color: '#00B1EA' },
+    { icon: FaSlack, name: 'Slack', color: '#4A154B' },
     { icon: SiSupabase, name: 'Supabase', color: '#3ECF8E' },
+    { icon: FaStripe, name: 'Stripe', color: '#635BFF' },
     { icon: SiN8N, name: 'n8n', color: '#EA4B71' },
 ];
 
 export function Integrations() {
     return (
         <section className="py-32 bg-[#0A0A0F] relative overflow-hidden">
-            {/* Background gradient effects */}
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-900/5 via-purple-900/5 to-transparent" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl" />
+            {/* Background gradient effects - Azul mais brilhante */}
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-600/20 via-blue-500/15 to-transparent" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-blue-500/20 rounded-full blur-3xl" />
+            <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}
