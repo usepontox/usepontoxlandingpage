@@ -257,14 +257,7 @@ export function Hero() {
                         </motion.div>
                     </div>
 
-                    {/* Animated border */}
-                    <motion.div
-                        className="absolute -z-10 top-10 right-10 w-full h-full border border-primary/20 rounded-2xl"
-                        animate={{
-                            borderColor: ['rgba(217,249,15,0.2)', 'rgba(217,249,15,0.4)', 'rgba(217,249,15,0.2)']
-                        }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                    />
+
                 </motion.div>
             </div>
         </section>
