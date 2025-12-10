@@ -1,17 +1,15 @@
 import { motion } from 'framer-motion';
 import { FaFacebook, FaWhatsapp, FaDiscord, FaInstagram } from 'react-icons/fa';
 import { SiSupabase, SiN8N, SiMercadopago } from 'react-icons/si';
-import { ShoppingBag } from 'lucide-react';
 
 const platforms = [
-    { icon: ShoppingBag, name: 'Mercado Livre', color: '#FFE600', delay: 0 },
-    { icon: FaFacebook, name: 'Facebook', color: '#1877F2', delay: 0.5 },
-    { icon: FaWhatsapp, name: 'WhatsApp', color: '#25D366', delay: 1 },
-    { icon: FaDiscord, name: 'Discord', color: '#5865F2', delay: 1.5 },
-    { icon: FaInstagram, name: 'Instagram', color: '#E4405F', delay: 2 },
-    { icon: SiMercadopago, name: 'Mercado Pago', color: '#00B1EA', delay: 2.5 },
-    { icon: SiSupabase, name: 'Supabase', color: '#3ECF8E', delay: 3 },
-    { icon: SiN8N, name: 'n8n', color: '#EA4B71', delay: 3.5 },
+    { icon: FaWhatsapp, name: 'WhatsApp', color: '#25D366' },
+    { icon: FaFacebook, name: 'Facebook', color: '#1877F2' },
+    { icon: FaDiscord, name: 'Discord', color: '#5865F2' },
+    { icon: FaInstagram, name: 'Instagram', color: '#E4405F' },
+    { icon: SiMercadopago, name: 'Mercado Pago', color: '#00B1EA' },
+    { icon: SiSupabase, name: 'Supabase', color: '#3ECF8E' },
+    { icon: SiN8N, name: 'n8n', color: '#EA4B71' },
 ];
 
 export function Integrations() {
@@ -32,110 +30,113 @@ export function Integrations() {
                     <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
                         <span className="text-blue-400">Conecte-se</span> às principais plataformas do mercado.
                     </h2>
-                    <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-4">
-                        O ggCheckout se integra com as ferramentas mais utilizadas para escalar seu negócio: chats em tempo real, análise de dados, trackeamento, automações, área de membros externa e muito mais.
-                    </p>
-                    <p className="text-gray-500 text-base max-w-2xl mx-auto">
-                        Tudo fluindo no mesmo ecossistema, sem gambiarra, sem complicação.
+                    <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                        Conectamos com as ferramentas mais utilizadas para escalar seu negócio: chats em tempo real, análise de dados, trackeamento, automações, área de membros externa e muito mais.
                     </p>
                 </motion.div>
 
-                {/* Animated Platform Icons */}
-                <div className="relative h-[600px] flex items-center justify-center">
-                    {/* Central Logo/Icon */}
-                    <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, type: 'spring' }}
-                        className="absolute z-20"
-                    >
-                        <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-2xl shadow-blue-500/50 relative">
-                            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-400/20 to-transparent animate-pulse" />
-                            <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl flex items-center justify-center relative z-10">
-                                <svg viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-                                    <path
-                                        d="M50 20 L50 35 M50 65 L50 80 M20 50 L35 50 M65 50 L80 50 M35 35 L42 42 M58 58 L65 65 M65 35 L58 42 M42 58 L35 65"
-                                        stroke="#3B82F6"
-                                        strokeWidth="4"
-                                        strokeLinecap="round"
-                                    />
-                                    <circle cx="50" cy="50" r="8" fill="#3B82F6" />
-                                </svg>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Orbiting Platform Icons */}
-                    {platforms.map((platform, index) => {
-                        const Icon = platform.icon;
-                        const angle = (index / platforms.length) * 360;
-                        const radius = 250; // Distance from center
-
-                        return (
-                            <motion.div
-                                key={platform.name}
-                                initial={{ opacity: 0, scale: 0 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                animate={{
-                                    rotate: [0, 360],
-                                }}
-                                transition={{
-                                    opacity: { delay: platform.delay * 0.1, duration: 0.5 },
-                                    scale: { delay: platform.delay * 0.1, duration: 0.5 },
-                                    rotate: {
-                                        duration: 40,
-                                        repeat: Infinity,
-                                        ease: 'linear',
-                                        delay: platform.delay * 0.1,
-                                    },
-                                }}
-                                className="absolute"
-                                style={{
-                                    left: '50%',
-                                    top: '50%',
-                                    marginLeft: `${Math.cos((angle * Math.PI) / 180) * radius}px`,
-                                    marginTop: `${Math.sin((angle * Math.PI) / 180) * radius}px`,
-                                }}
-                            >
-                                <motion.div
-                                    whileHover={{ scale: 1.2, y: -5 }}
-                                    animate={{
-                                        rotate: [0, -360],
-                                    }}
-                                    transition={{
-                                        rotate: {
-                                            duration: 40,
-                                            repeat: Infinity,
-                                            ease: 'linear',
-                                            delay: platform.delay * 0.1,
-                                        },
-                                    }}
-                                    className="relative group cursor-pointer"
-                                >
+                {/* Horizontal Scrolling Platform Icons */}
+                <div className="relative overflow-hidden py-16">
+                    <div className="flex gap-8">
+                        {/* First set of icons */}
+                        <motion.div
+                            className="flex gap-8 shrink-0"
+                            animate={{
+                                x: [0, -1400],
+                            }}
+                            transition={{
+                                x: {
+                                    duration: 30,
+                                    repeat: Infinity,
+                                    ease: 'linear',
+                                },
+                            }}
+                        >
+                            {platforms.map((platform) => {
+                                const Icon = platform.icon;
+                                return (
                                     <div
-                                        className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:border-white/30"
+                                        key={`first-${platform.name}`}
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
                                     >
                                         <Icon
-                                            className="w-8 h-8 md:w-10 md:h-10 transition-all duration-300"
+                                            className="w-12 h-12 md:w-14 md:h-14"
                                             style={{ color: platform.color }}
                                         />
                                     </div>
+                                );
+                            })}
+                        </motion.div>
 
-                                    {/* Tooltip */}
-                                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                                        <span className="text-xs font-medium text-gray-300 bg-[#1A1A1F] px-3 py-1 rounded-lg border border-white/10">
-                                            {platform.name}
-                                        </span>
+                        {/* Second set (duplicate for seamless loop) */}
+                        <motion.div
+                            className="flex gap-8 shrink-0"
+                            animate={{
+                                x: [0, -1400],
+                            }}
+                            transition={{
+                                x: {
+                                    duration: 30,
+                                    repeat: Infinity,
+                                    ease: 'linear',
+                                },
+                            }}
+                        >
+                            {platforms.map((platform) => {
+                                const Icon = platform.icon;
+                                return (
+                                    <div
+                                        key={`second-${platform.name}`}
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        style={{
+                                            boxShadow: `0 0 20px ${platform.color}20`,
+                                        }}
+                                    >
+                                        <Icon
+                                            className="w-12 h-12 md:w-14 md:h-14"
+                                            style={{ color: platform.color }}
+                                        />
                                     </div>
-                                </motion.div>
-                            </motion.div>
-                        );
-                    })}
+                                );
+                            })}
+                        </motion.div>
+
+                        {/* Third set (for extra smoothness) */}
+                        <motion.div
+                            className="flex gap-8 shrink-0"
+                            animate={{
+                                x: [0, -1400],
+                            }}
+                            transition={{
+                                x: {
+                                    duration: 30,
+                                    repeat: Infinity,
+                                    ease: 'linear',
+                                },
+                            }}
+                        >
+                            {platforms.map((platform) => {
+                                const Icon = platform.icon;
+                                return (
+                                    <div
+                                        key={`third-${platform.name}`}
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        style={{
+                                            boxShadow: `0 0 20px ${platform.color}20`,
+                                        }}
+                                    >
+                                        <Icon
+                                            className="w-12 h-12 md:w-14 md:h-14"
+                                            style={{ color: platform.color }}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </motion.div>
+                    </div>
                 </div>
 
                 {/* Tagline */}
@@ -147,7 +148,6 @@ export function Integrations() {
                     className="text-center mt-20"
                 >
                     <p className="text-xl md:text-2xl font-medium">
-                        <span className="text-gray-400">Você vende.</span>{' '}
                         <span className="text-blue-400">A tecnologia trabalha junto,</span>{' '}
                         <span className="text-gray-400">não contra você.</span>
                     </p>
