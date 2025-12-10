@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { FaFacebook, FaWhatsapp, FaDiscord, FaInstagram, FaSlack, FaStripe } from 'react-icons/fa';
-import { SiSupabase, SiN8N, SiMercadopago, SiNotion, SiZapier, SiOpenai, SiGooglegemini } from 'react-icons/si';
-import { Building2 } from 'lucide-react';
+import { FaFacebook, FaWhatsapp, FaDiscord, FaInstagram, FaSlack, FaStripe, FaEthereum } from 'react-icons/fa';
+import { SiSupabase, SiN8N, SiMercadopago, SiNotion, SiZapier, SiOpenai, SiGooglegemini, SiZendesk, SiStreamlit, SiBinance } from 'react-icons/si';
+import { Building2, TrendingUp, BarChart3, FileSpreadsheet } from 'lucide-react';
 
 const platforms = [
     { icon: FaWhatsapp, name: 'WhatsApp', color: '#25D366' },
@@ -18,6 +18,13 @@ const platforms = [
     { icon: SiSupabase, name: 'Supabase', color: '#3ECF8E' },
     { icon: FaStripe, name: 'Stripe', color: '#635BFF' },
     { icon: SiN8N, name: 'n8n', color: '#EA4B71' },
+    { icon: SiZendesk, name: 'Zendesk', color: '#03363D' },
+    { icon: FileSpreadsheet, name: 'Office 365', color: '#D83B01' },
+    { icon: BarChart3, name: 'Power BI', color: '#F2C811' },
+    { icon: SiStreamlit, name: 'Streamlit', color: '#FF4B4B' },
+    { icon: FaEthereum, name: 'Ethereum', color: '#627EEA' },
+    { icon: TrendingUp, name: 'CoinMarketCap', color: '#3861FB' },
+    { icon: SiBinance, name: 'Binance', color: '#F3BA2F' },
 ];
 
 export function Integrations() {
