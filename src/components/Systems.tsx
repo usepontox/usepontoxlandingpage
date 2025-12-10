@@ -46,7 +46,7 @@ export function Systems() {
     })), []);
 
     return (
-        <section className="py-32 bg-background relative border-t border-white/5 overflow-hidden" id="systems">
+        <section className="py-32 bg-background relative overflow-hidden" id="systems">
             {/* Floating Background Dots */}
             <div className="absolute inset-0 pointer-events-none">
                 {dots.map((dot, i) => (
