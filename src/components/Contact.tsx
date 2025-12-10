@@ -35,7 +35,7 @@ export function Contact() {
     };
 
     return (
-        <section className="py-24 bg-transparent relative overflow-hidden" id="contact">
+        <section className="py-16 bg-background relative overflow-hidden" id="contact">
             <div className="container mx-auto px-6 max-w-6xl relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 

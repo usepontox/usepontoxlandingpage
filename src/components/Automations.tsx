@@ -3,7 +3,7 @@ import { Zap, MessageSquare, Bot, Database } from 'lucide-react';
 
 export function Automations() {
     return (
-        <section className="py-32 bg-[#0E0E0E] relative overflow-hidden">
+        <section className="py-16 bg-background relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <motion.div
