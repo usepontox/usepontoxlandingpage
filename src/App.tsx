@@ -1,6 +1,7 @@
 import { Hero } from './components/Hero';
 import { Systems } from './components/Systems';
 import { Automations } from './components/Automations';
+import { Integrations } from './components/Integrations';
 import { Cases } from './components/Cases';
 import { Contact } from './components/Contact';
 import { Header } from './components/Header';
@@ -12,6 +13,7 @@ function App() {
       <Hero />
       <Systems />
       <Automations />
+      <Integrations />
       <Cases />
       <Contact />
     </main>
