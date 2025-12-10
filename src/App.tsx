@@ -11,9 +11,9 @@ function App() {
     <main className="min-h-screen bg-background text-white selection:bg-primary/30 relative">
       <Header />
       <Hero />
+      <Integrations />
       <Systems />
       <Automations />
-      <Integrations />
       <Cases />
       <Contact />
     </main>
