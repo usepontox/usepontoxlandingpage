@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaFacebook, FaWhatsapp, FaDiscord, FaInstagram, FaSlack, FaStripe } from 'react-icons/fa';
 import { SiSupabase, SiN8N, SiMercadopago, SiNotion, SiZapier, SiOpenai, SiGooglegemini } from 'react-icons/si';
+import { Building2 } from 'lucide-react';
 
 const platforms = [
     { icon: FaWhatsapp, name: 'WhatsApp', color: '#25D366' },
@@ -10,6 +11,7 @@ const platforms = [
     { icon: FaDiscord, name: 'Discord', color: '#5865F2' },
     { icon: SiNotion, name: 'Notion', color: '#FFFFFF' },
     { icon: FaInstagram, name: 'Instagram', color: '#E4405F' },
+    { icon: Building2, name: 'Protheus TOTVS', color: '#0080FF' },
     { icon: SiZapier, name: 'Zapier', color: '#FF4A00' },
     { icon: SiMercadopago, name: 'Mercado Pago', color: '#00B1EA' },
     { icon: FaSlack, name: 'Slack', color: '#4A154B' },
