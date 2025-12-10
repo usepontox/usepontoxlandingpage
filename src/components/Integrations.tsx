@@ -61,18 +61,23 @@ export function Integrations() {
                             {platforms.map((platform) => {
                                 const Icon = platform.icon;
                                 return (
-                                    <div
+                                    <motion.div
                                         key={`first-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
+                                        whileHover={{
+                                            scale: 1.15,
+                                            boxShadow: `0 0 40px ${platform.color}60, 0 0 60px ${platform.color}30`,
+                                        }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <Icon
                                             className="w-12 h-12 md:w-14 md:h-14"
                                             style={{ color: platform.color }}
                                         />
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </motion.div>
@@ -94,18 +99,23 @@ export function Integrations() {
                             {platforms.map((platform) => {
                                 const Icon = platform.icon;
                                 return (
-                                    <div
+                                    <motion.div
                                         key={`second-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
+                                        whileHover={{
+                                            scale: 1.15,
+                                            boxShadow: `0 0 40px ${platform.color}60, 0 0 60px ${platform.color}30`,
+                                        }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <Icon
                                             className="w-12 h-12 md:w-14 md:h-14"
                                             style={{ color: platform.color }}
                                         />
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </motion.div>
@@ -127,18 +137,23 @@ export function Integrations() {
                             {platforms.map((platform) => {
                                 const Icon = platform.icon;
                                 return (
-                                    <div
+                                    <motion.div
                                         key={`third-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
+                                        whileHover={{
+                                            scale: 1.15,
+                                            boxShadow: `0 0 40px ${platform.color}60, 0 0 60px ${platform.color}30`,
+                                        }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <Icon
                                             className="w-12 h-12 md:w-14 md:h-14"
                                             style={{ color: platform.color }}
                                         />
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </motion.div>
@@ -163,18 +178,23 @@ export function Integrations() {
                             {platforms.map((platform) => {
                                 const Icon = platform.icon;
                                 return (
-                                    <div
+                                    <motion.div
                                         key={`reverse-first-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
+                                        whileHover={{
+                                            scale: 1.15,
+                                            boxShadow: `0 0 40px ${platform.color}60, 0 0 60px ${platform.color}30`,
+                                        }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <Icon
                                             className="w-12 h-12 md:w-14 md:h-14"
                                             style={{ color: platform.color }}
                                         />
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </motion.div>
@@ -196,18 +216,23 @@ export function Integrations() {
                             {platforms.map((platform) => {
                                 const Icon = platform.icon;
                                 return (
-                                    <div
+                                    <motion.div
                                         key={`reverse-second-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
+                                        whileHover={{
+                                            scale: 1.15,
+                                            boxShadow: `0 0 40px ${platform.color}60, 0 0 60px ${platform.color}30`,
+                                        }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <Icon
                                             className="w-12 h-12 md:w-14 md:h-14"
                                             style={{ color: platform.color }}
                                         />
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </motion.div>
@@ -229,18 +254,23 @@ export function Integrations() {
                             {platforms.map((platform) => {
                                 const Icon = platform.icon;
                                 return (
-                                    <div
+                                    <motion.div
                                         key={`reverse-third-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
+                                        whileHover={{
+                                            scale: 1.15,
+                                            boxShadow: `0 0 40px ${platform.color}60, 0 0 60px ${platform.color}30`,
+                                        }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <Icon
                                             className="w-12 h-12 md:w-14 md:h-14"
                                             style={{ color: platform.color }}
                                         />
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </motion.div>
