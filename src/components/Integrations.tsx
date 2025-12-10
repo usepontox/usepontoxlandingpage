@@ -63,7 +63,7 @@ export function Integrations() {
                                 return (
                                     <div
                                         key={`first-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
@@ -96,7 +96,7 @@ export function Integrations() {
                                 return (
                                     <div
                                         key={`second-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
@@ -129,7 +129,7 @@ export function Integrations() {
                                 return (
                                     <div
                                         key={`third-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
@@ -165,7 +165,7 @@ export function Integrations() {
                                 return (
                                     <div
                                         key={`reverse-first-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
@@ -198,7 +198,7 @@ export function Integrations() {
                                 return (
                                     <div
                                         key={`reverse-second-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}
@@ -231,7 +231,7 @@ export function Integrations() {
                                 return (
                                     <div
                                         key={`reverse-third-${platform.name}`}
-                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-125 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(217,249,15,0.3)] transition-all duration-300 shrink-0 cursor-pointer"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
                                         }}

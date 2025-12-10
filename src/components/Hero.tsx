@@ -1,10 +1,88 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
+const codeLines = [
+    {
+        line: 1, content: "const Solution = async () => {", tokens: [
+            { text: "const", color: "text-primary", glow: true },
+            { text: " Solution ", color: "text-white" },
+            { text: "=", color: "text-gray-400" },
+            { text: " async", color: "text-yellow-400" },
+            { text: " () ", color: "text-gray-400" },
+            { text: "=>", color: "text-primary", glow: true },
+            { text: " {", color: "text-gray-400" }
+        ]
+    },
+    {
+        line: 2, content: "  await analyze('business_needs');", tokens: [
+            { text: "  await ", color: "text-white" },
+            { text: "analyze", color: "text-blue-400", glow: true },
+            { text: "( '", color: "text-gray-400" },
+            { text: "business_needs", color: "text-green-300" },
+            { text: "' );", color: "text-gray-400" }
+        ]
+    },
+    {
+        line: 3, content: "  return new Success('scalable_growth');", tokens: [
+            { text: "  return ", color: "text-white" },
+            { text: "new", color: "text-primary", glow: true },
+            { text: " ", color: "text-gray-400" },
+            { text: "Success", color: "text-yellow-400", glow: true },
+            { text: "( '", color: "text-gray-400" },
+            { text: "scalable_growth", color: "text-green-300" },
+            { text: "' );", color: "text-gray-400" }
+        ]
+    },
+    {
+        line: 4, content: "}", tokens: [
+            { text: "}", color: "text-gray-400" }
+        ]
+    }
+];
+
 export function Hero() {
+    const [typedLines, setTypedLines] = useState<string[]>(['', '', '', '']);
+    const [currentLine, setCurrentLine] = useState(0);
+    const [isTyping, setIsTyping] = useState(true);
+
+    useEffect(() => {
+        if (!isTyping) {
+            // Pause before restarting
+            const timeout = setTimeout(() => {
+                setTypedLines(['', '', '', '']);
+                setCurrentLine(0);
+                setIsTyping(true);
+            }, 3000);
+            return () => clearTimeout(timeout);
+        }
+
+        if (currentLine >= codeLines.length) {
+            setIsTyping(false);
+            return;
+        }
+
+        const fullText = codeLines[currentLine].content;
+        const currentText = typedLines[currentLine];
+
+        if (currentText.length < fullText.length) {
+            const timeout = setTimeout(() => {
+                const newTypedLines = [...typedLines];
+                newTypedLines[currentLine] = fullText.slice(0, currentText.length + 1);
+                setTypedLines(newTypedLines);
+            }, 50);
+            return () => clearTimeout(timeout);
+        } else {
+            // Move to next line
+            const timeout = setTimeout(() => {
+                setCurrentLine(currentLine + 1);
+            }, 300);
+            return () => clearTimeout(timeout);
+        }
+    }, [typedLines, currentLine, isTyping]);
+
     return (
         <section className="relative min-h-screen flex items-start overflow-hidden bg-background pt-32">
-
 
             <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div
@@ -55,7 +133,7 @@ export function Hero() {
                     </div>
                 </motion.div>
 
-                {/* Abstract Visual - Representing Complexity to Simplicity */}
+                {/* Code Block with Typing Effect */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -92,150 +170,61 @@ export function Hero() {
                                 animate={{ opacity: [0.5, 1, 0.5] }}
                                 transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
                             />
-                            <motion.div
-                                className="ml-auto text-xs text-gray-500 font-mono"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.5 }}
-                            >
+                            <div className="ml-auto text-xs text-gray-500 font-mono">
                                 dashboard_v2.tsx
-                            </motion.div>
+                            </div>
                         </div>
 
-                        <div className="space-y-4 font-mono text-sm relative z-10">
-                            {/* Line 1 */}
-                            <motion.div
-                                className="flex gap-4"
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.8, duration: 0.5 }}
-                            >
-                                <span className="text-gray-600">1</span>
-                                <motion.span
-                                    className="text-primary drop-shadow-[0_0_8px_rgba(217,249,15,0.5)]"
-                                    animate={{ opacity: [1, 0.7, 1] }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                >
-                                    const
-                                </motion.span>
-                                <span className="text-white">Solution</span>
-                                <span className="text-gray-400">=</span>
-                                <span className="text-yellow-400">async</span>
-                                <span className="text-gray-400">()</span>
-                                <motion.span
-                                    className="text-primary drop-shadow-[0_0_8px_rgba(217,249,15,0.5)]"
-                                    animate={{ opacity: [1, 0.7, 1] }}
-                                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                                >
-                                    {`=>`}
-                                </motion.span>
-                                <span className="text-gray-400">{`{`}</span>
-                            </motion.div>
+                        <div className="space-y-4 font-mono text-sm relative z-10 min-h-[120px]">
+                            {codeLines.map((codeLine, idx) => (
+                                <div key={idx} className="flex gap-4">
+                                    <span className="text-gray-600">{codeLine.line}</span>
+                                    <div className="flex-1">
+                                        {codeLine.tokens.map((token, tokenIdx) => {
+                                            const displayText = typedLines[idx].slice(
+                                                codeLine.tokens.slice(0, tokenIdx).reduce((acc, t) => acc + t.text.length, 0),
+                                                codeLine.tokens.slice(0, tokenIdx + 1).reduce((acc, t) => acc + t.text.length, 0)
+                                            );
 
-                            {/* Line 2 */}
-                            <motion.div
-                                className="flex gap-4 pl-4"
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1.2, duration: 0.5 }}
-                            >
-                                <span className="text-gray-600">2</span>
-                                <span className="text-white">await</span>
-                                <motion.span
-                                    className="text-blue-400"
-                                    animate={{
-                                        textShadow: [
-                                            '0 0 8px rgba(96, 165, 250, 0)',
-                                            '0 0 8px rgba(96, 165, 250, 0.8)',
-                                            '0 0 8px rgba(96, 165, 250, 0)'
-                                        ]
-                                    }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                >
-                                    analyze
-                                </motion.span>
-                                <span className="text-gray-400">(</span>
-                                <span className="text-green-300">'business_needs'</span>
-                                <span className="text-gray-400">);</span>
-                            </motion.div>
-
-                            {/* Line 3 */}
-                            <motion.div
-                                className="flex gap-4 pl-4"
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1.6, duration: 0.5 }}
-                            >
-                                <span className="text-gray-600">3</span>
-                                <span className="text-white">return</span>
-                                <motion.span
-                                    className="text-primary drop-shadow-[0_0_8px_rgba(217,249,15,0.5)]"
-                                    animate={{ opacity: [1, 0.7, 1] }}
-                                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                                >
-                                    new
-                                </motion.span>
-                                <motion.span
-                                    className="text-yellow-400"
-                                    animate={{
-                                        textShadow: [
-                                            '0 0 8px rgba(250, 204, 21, 0)',
-                                            '0 0 8px rgba(250, 204, 21, 0.8)',
-                                            '0 0 8px rgba(250, 204, 21, 0)'
-                                        ]
-                                    }}
-                                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                                >
-                                    Success
-                                </motion.span>
-                                <span className="text-gray-400">(</span>
-                                <span className="text-green-300">'scalable_growth'</span>
-                                <span className="text-gray-400">);</span>
-                            </motion.div>
-
-                            {/* Line 4 with blinking cursor */}
-                            <motion.div
-                                className="flex gap-4"
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 2.0, duration: 0.5 }}
-                            >
-                                <span className="text-gray-600">4</span>
-                                <span className="text-gray-400">{`}`}</span>
-                                <motion.span
-                                    className="inline-block w-2 h-4 bg-primary ml-1"
-                                    animate={{ opacity: [1, 0, 1] }}
-                                    transition={{ duration: 0.8, repeat: Infinity }}
-                                />
-                            </motion.div>
+                                            return (
+                                                <motion.span
+                                                    key={tokenIdx}
+                                                    className={`${token.color} ${token.glow ? 'drop-shadow-[0_0_8px_rgba(217,249,15,0.3)]' : ''}`}
+                                                    animate={token.glow ? { opacity: [1, 0.7, 1] } : {}}
+                                                    transition={token.glow ? { duration: 2, repeat: Infinity, delay: tokenIdx * 0.3 } : {}}
+                                                >
+                                                    {displayText}
+                                                </motion.span>
+                                            );
+                                        })}
+                                        {/* Blinking cursor */}
+                                        {currentLine === idx && isTyping && (
+                                            <motion.span
+                                                className="inline-block w-2 h-4 bg-primary ml-1"
+                                                animate={{ opacity: [1, 0, 1] }}
+                                                transition={{ duration: 0.8, repeat: Infinity }}
+                                            />
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
 
                         <motion.div
                             className="mt-8 pt-6 border-t border-white/5 flex justify-between items-center relative z-10"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 2.4 }}
                         >
                             <div className="flex -space-x-3">
                                 {[1, 2, 3].map(i => (
                                     <motion.div
                                         key={i}
                                         className="w-8 h-8 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-[10px] text-gray-400"
-                                        initial={{ scale: 0 }}
-                                        animate={{ scale: 1 }}
-                                        transition={{ delay: 2.4 + (i * 0.1), type: "spring" }}
                                         whileHover={{ scale: 1.1, borderColor: "rgba(217,249,15,0.5)" }}
                                     >
                                         Dev
                                     </motion.div>
                                 ))}
                             </div>
-                            <motion.div
-                                className="text-xs text-primary flex items-center gap-2"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 2.7 }}
-                            >
+                            <div className="text-xs text-primary flex items-center gap-2">
                                 <motion.span
                                     className="w-2 h-2 rounded-full bg-primary"
                                     animate={{
@@ -249,10 +238,9 @@ export function Hero() {
                                     transition={{ duration: 1.5, repeat: Infinity }}
                                 />
                                 System Active
-                            </motion.div>
+                            </div>
                         </motion.div>
                     </div>
-
 
                 </motion.div>
             </div>
