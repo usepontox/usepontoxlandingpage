@@ -4,11 +4,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 export function Hero() {
     return (
         <section className="relative min-h-screen flex items-start overflow-hidden bg-background pt-32">
-            {/* Dynamic Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-                <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]" />
-            </div>
+
 
             <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div
