@@ -29,6 +29,10 @@ export function Integrations() {
             <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-green-400/10 rounded-full blur-3xl" />
 
+            {/* Fade overlays para transição suave */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0E0E0E] to-transparent z-10" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0E0E0E] to-transparent z-10" />
+
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}
                 <motion.div
