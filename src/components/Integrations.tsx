@@ -36,7 +36,8 @@ export function Integrations() {
                 </motion.div>
 
                 {/* Horizontal Scrolling Platform Icons */}
-                <div className="relative overflow-hidden py-16">
+                <div className="relative overflow-hidden py-8 space-y-8">
+                    {/* First Row - Moving Left */}
                     <div className="flex gap-8">
                         {/* First set of icons */}
                         <motion.div
@@ -123,6 +124,108 @@ export function Integrations() {
                                 return (
                                     <div
                                         key={`third-${platform.name}`}
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        style={{
+                                            boxShadow: `0 0 20px ${platform.color}20`,
+                                        }}
+                                    >
+                                        <Icon
+                                            className="w-12 h-12 md:w-14 md:h-14"
+                                            style={{ color: platform.color }}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </motion.div>
+                    </div>
+
+                    {/* Second Row - Moving Right (Reverse) */}
+                    <div className="flex gap-8">
+                        {/* First set of icons */}
+                        <motion.div
+                            className="flex gap-8 shrink-0"
+                            animate={{
+                                x: [-1400, 0],
+                            }}
+                            transition={{
+                                x: {
+                                    duration: 30,
+                                    repeat: Infinity,
+                                    ease: 'linear',
+                                },
+                            }}
+                        >
+                            {platforms.map((platform) => {
+                                const Icon = platform.icon;
+                                return (
+                                    <div
+                                        key={`reverse-first-${platform.name}`}
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        style={{
+                                            boxShadow: `0 0 20px ${platform.color}20`,
+                                        }}
+                                    >
+                                        <Icon
+                                            className="w-12 h-12 md:w-14 md:h-14"
+                                            style={{ color: platform.color }}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </motion.div>
+
+                        {/* Second set (duplicate for seamless loop) */}
+                        <motion.div
+                            className="flex gap-8 shrink-0"
+                            animate={{
+                                x: [-1400, 0],
+                            }}
+                            transition={{
+                                x: {
+                                    duration: 30,
+                                    repeat: Infinity,
+                                    ease: 'linear',
+                                },
+                            }}
+                        >
+                            {platforms.map((platform) => {
+                                const Icon = platform.icon;
+                                return (
+                                    <div
+                                        key={`reverse-second-${platform.name}`}
+                                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
+                                        style={{
+                                            boxShadow: `0 0 20px ${platform.color}20`,
+                                        }}
+                                    >
+                                        <Icon
+                                            className="w-12 h-12 md:w-14 md:h-14"
+                                            style={{ color: platform.color }}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </motion.div>
+
+                        {/* Third set (for extra smoothness) */}
+                        <motion.div
+                            className="flex gap-8 shrink-0"
+                            animate={{
+                                x: [-1400, 0],
+                            }}
+                            transition={{
+                                x: {
+                                    duration: 30,
+                                    repeat: Infinity,
+                                    ease: 'linear',
+                                },
+                            }}
+                        >
+                            {platforms.map((platform) => {
+                                const Icon = platform.icon;
+                                return (
+                                    <div
+                                        key={`reverse-third-${platform.name}`}
                                         className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#1A1A1F] border border-white/10 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 shrink-0"
                                         style={{
                                             boxShadow: `0 0 20px ${platform.color}20`,
