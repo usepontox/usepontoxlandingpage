@@ -23,12 +23,6 @@ const platforms = [
 export function Integrations() {
     return (
         <section className="py-16 bg-background relative overflow-hidden">
-            {/* Background gradient effects - Verde neon brilhante */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/15 to-transparent" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-green-400/10 rounded-full blur-3xl" />
-
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}
