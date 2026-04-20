@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - main
-workflow_dispatch:
+  workflow_dispatch:
+
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🚀 Deploy
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
@@ -35,9 +36,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./public_html/
-          protocol: ftps
+          protocol: ftp
           dangerous-force-overwrite: true
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
